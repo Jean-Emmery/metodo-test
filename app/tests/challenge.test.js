@@ -1,4 +1,4 @@
-import { absVal, countLetterE, filterInteger, isEven, removeVowels, square, sub } from "../js/challenge";
+import {absVal, countLetterE, filterInteger, isEven, isLeapYear, removeVowels, square, sub} from "../js/challenge";
 
 test("return abs value", () => {
     expect(absVal(-18)).toBeGreaterThanOrEqual(0);
@@ -40,5 +40,20 @@ describe("countLetterE", () => {
     });
     test("count ok", () => {
         expect(countLetterE("eee")).toEqual(3);
+    });
+});
+
+describe('leap year', () => {
+    test('year is not a number', () => {
+        expect(() => isLeapYear('toto')).toThrow(Error);
+        expect(() => isLeapYear('toto')).toThrow('Not a number');
+    });
+
+    test('year is a leap year', () => {
+        expect(isLeapYear(2012)).toBeTruthy();
+    });
+
+    test('year is not leap year', () => {
+        expect(isLeapYear(2011)).toBeFalsy();
     });
 });

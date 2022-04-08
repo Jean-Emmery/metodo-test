@@ -53,3 +53,11 @@ export const cesar = (txt, dec) => {
     }
     return resultArr.join("");
 };
+
+export const isLeapYear = (year) => {
+    if (!Number.isInteger(year) || year <= 0) throw Error('Not a number');
+    if ((0 == year % 4 && 0 != year % 100) || 0 == year % 400) {
+        return true;
+    }
+    return false;
+};
